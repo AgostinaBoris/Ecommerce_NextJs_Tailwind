@@ -4,18 +4,18 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useContext } from "react";
-import { Store } from "@/utils/Store"; //para acceder al estado global de la app
+import { Store } from "@/utils/Store"; 
 import Product from "@/models/Product";
 import db from "@/utils/db";
 
 
-//componente Productscreen muestra los detalles de un producto especifico. 
+
 export default function ProductScreen (props) {
   const { product } = props;
   const { state, dispatch } = useContext(Store);
-  // state es el estado global de la app. dispatch se usa para enviar acciones para modificar el estado
+
   const router = useRouter();
-  // se usa el hook useRouter para acceder al obj router que contiene info sobre la ruta actual
+
   if (!product) {
     return <Layout title="Product Not Found">Product Not Found</Layout>;
   }
@@ -23,7 +23,7 @@ export default function ProductScreen (props) {
 
 
   const addToCartHandler = () => {
-    // se ejecuta cuando se hace clic en el botón "Add to cart". Esta función agrega el producto al carrito de compras global almacenado en el estado state.cart y redirige al usuario a la página del carrito.
+
     const existItem = state.cart.cartItems.find((x) => x.slug === product.slug);
     const quantity = existItem ? existItem.quantity + 1 : 1;
 
@@ -38,9 +38,8 @@ export default function ProductScreen (props) {
   };
 
   return (
-    // Retorna el JSX que se renderizará en el componente.
+
     <Layout title={product.name}>
-       {/* Renderiza el componente Layout, pasando el nombre del producto como valor de la propiedad title. */}
       <div className="py-2">
         <Link href="/">back to products</Link>
       </div>

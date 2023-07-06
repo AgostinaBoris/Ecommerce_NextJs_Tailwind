@@ -1,149 +1,85 @@
 "use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 (() => {
 var exports = {};
-exports.id = 748;
-exports.ids = [748];
+exports.id = "pages/api/auth/[...nextauth]";
+exports.ids = ["pages/api/auth/[...nextauth]"];
 exports.modules = {
 
-/***/ 8432:
+/***/ "bcryptjs":
+/*!***************************!*\
+  !*** external "bcryptjs" ***!
+  \***************************/
 /***/ ((module) => {
 
 module.exports = require("bcryptjs");
 
 /***/ }),
 
-/***/ 2663:
+/***/ "mongoose":
+/*!***************************!*\
+  !*** external "mongoose" ***!
+  \***************************/
 /***/ ((module) => {
 
 module.exports = require("mongoose");
 
 /***/ }),
 
-/***/ 76:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "next-auth/next":
+/*!*********************************!*\
+  !*** external "next-auth/next" ***!
+  \*********************************/
+/***/ ((module) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Z: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2663);
-/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);
-// Esquema y modelo de ususario usando mongoose en un entorno de desarrollo de JS
-
-const userSchema = new (mongoose__WEBPACK_IMPORTED_MODULE_0___default().Schema)({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    isAdmin: {
-        type: Boolean,
-        required: true,
-        default: false
-    }
-}, {
-    timestamps: true
-});
-const User = (mongoose__WEBPACK_IMPORTED_MODULE_0___default().models).User || mongoose__WEBPACK_IMPORTED_MODULE_0___default().model("User", userSchema);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (User);
-
+module.exports = require("next-auth/next");
 
 /***/ }),
 
-/***/ 8880:
+/***/ "next-auth/providers/credentials":
+/*!**************************************************!*\
+  !*** external "next-auth/providers/credentials" ***!
+  \**************************************************/
+/***/ ((module) => {
+
+module.exports = require("next-auth/providers/credentials");
+
+/***/ }),
+
+/***/ "(api)/./models/User.js":
+/*!************************!*\
+  !*** ./models/User.js ***!
+  \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n// Esquema y modelo de ususario usando mongoose en un entorno de desarrollo de JS\n\nconst userSchema = new (mongoose__WEBPACK_IMPORTED_MODULE_0___default().Schema)({\n    name: {\n        type: String,\n        required: true\n    },\n    email: {\n        type: String,\n        required: true,\n        unique: true\n    },\n    password: {\n        type: String,\n        required: true\n    },\n    isAdmin: {\n        type: Boolean,\n        required: true,\n        default: false\n    }\n}, {\n    timestamps: true\n});\nconst User = (mongoose__WEBPACK_IMPORTED_MODULE_0___default().models).User || mongoose__WEBPACK_IMPORTED_MODULE_0___default().model(\"User\", userSchema);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (User);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9tb2RlbHMvVXNlci5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQSxpRkFBaUY7QUFFakQ7QUFFaEMsTUFBTUMsYUFBYSxJQUFJRCx3REFBZSxDQUNsQztJQUNJRyxNQUFNO1FBQUVDLE1BQU1DO1FBQVFDLFVBQVU7SUFBSztJQUNyQ0MsT0FBTztRQUFFSCxNQUFNQztRQUFRQyxVQUFVO1FBQU1FLFFBQVE7SUFBSztJQUNwREMsVUFBVTtRQUFFTCxNQUFNQztRQUFRQyxVQUFVO0lBQUs7SUFDekNJLFNBQVM7UUFBRU4sTUFBTU87UUFBU0wsVUFBVTtRQUFNTSxTQUFTO0lBQU07QUFDN0QsR0FDQTtJQUNJQyxZQUFZO0FBQ2hCO0FBR0osTUFBTUMsT0FBT2Qsd0RBQWUsQ0FBQ2MsSUFBSSxJQUFJZCxxREFBYyxDQUFDLFFBQVFDO0FBRTVELGlFQUFlYSxJQUFJQSxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbmV4dC10YWlsd2luZC1hbWF6b25hLy4vbW9kZWxzL1VzZXIuanM/NzM2NyJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBFc3F1ZW1hIHkgbW9kZWxvIGRlIHVzdXNhcmlvIHVzYW5kbyBtb25nb29zZSBlbiB1biBlbnRvcm5vIGRlIGRlc2Fycm9sbG8gZGUgSlNcclxuXHJcbmltcG9ydCBtb25nb29zZSBmcm9tIFwibW9uZ29vc2VcIjtcclxuXHJcbmNvbnN0IHVzZXJTY2hlbWEgPSBuZXcgbW9uZ29vc2UuU2NoZW1hKFxyXG4gICAge1xyXG4gICAgICAgIG5hbWU6IHsgdHlwZTogU3RyaW5nLCByZXF1aXJlZDogdHJ1ZSB9LFxyXG4gICAgICAgIGVtYWlsOiB7IHR5cGU6IFN0cmluZywgcmVxdWlyZWQ6IHRydWUsIHVuaXF1ZTogdHJ1ZSB9LFxyXG4gICAgICAgIHBhc3N3b3JkOiB7IHR5cGU6IFN0cmluZywgcmVxdWlyZWQ6IHRydWUgfSxcclxuICAgICAgICBpc0FkbWluOiB7IHR5cGU6IEJvb2xlYW4sIHJlcXVpcmVkOiB0cnVlLCBkZWZhdWx0OiBmYWxzZSB9LFxyXG4gICAgfSxcclxuICAgIHtcclxuICAgICAgICB0aW1lc3RhbXBzOiB0cnVlLFxyXG4gICAgfVxyXG4pO1xyXG5cclxuY29uc3QgVXNlciA9IG1vbmdvb3NlLm1vZGVscy5Vc2VyIHx8IG1vbmdvb3NlLm1vZGVsKCdVc2VyJywgdXNlclNjaGVtYSk7XHJcblxyXG5leHBvcnQgZGVmYXVsdCBVc2VyOyJdLCJuYW1lcyI6WyJtb25nb29zZSIsInVzZXJTY2hlbWEiLCJTY2hlbWEiLCJuYW1lIiwidHlwZSIsIlN0cmluZyIsInJlcXVpcmVkIiwiZW1haWwiLCJ1bmlxdWUiLCJwYXNzd29yZCIsImlzQWRtaW4iLCJCb29sZWFuIiwiZGVmYXVsdCIsInRpbWVzdGFtcHMiLCJVc2VyIiwibW9kZWxzIiwibW9kZWwiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./models/User.js\n");
 
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ _nextauth_)
-});
+/***/ }),
 
-// EXTERNAL MODULE: external "bcryptjs"
-var external_bcryptjs_ = __webpack_require__(8432);
-var external_bcryptjs_default = /*#__PURE__*/__webpack_require__.n(external_bcryptjs_);
-;// CONCATENATED MODULE: external "next-auth/next"
-const next_namespaceObject = require("next-auth/next");
-var next_default = /*#__PURE__*/__webpack_require__.n(next_namespaceObject);
-;// CONCATENATED MODULE: external "next-auth/providers/credentials"
-const credentials_namespaceObject = require("next-auth/providers/credentials");
-var credentials_default = /*#__PURE__*/__webpack_require__.n(credentials_namespaceObject);
-// EXTERNAL MODULE: ./models/User.js
-var User = __webpack_require__(76);
-// EXTERNAL MODULE: ./utils/db.js
-var db = __webpack_require__(5690);
-;// CONCATENATED MODULE: ./pages/api/auth/[...nextauth].js
+/***/ "(api)/./pages/api/auth/[...nextauth].js":
+/*!*****************************************!*\
+  !*** ./pages/api/auth/[...nextauth].js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// este modulo se utiliza para comparar contraseñas cifradas.
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var bcryptjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bcryptjs */ \"bcryptjs\");\n/* harmony import */ var bcryptjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bcryptjs__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_auth_next__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next-auth/next */ \"next-auth/next\");\n/* harmony import */ var next_auth_next__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_auth_next__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var next_auth_providers_credentials__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next-auth/providers/credentials */ \"next-auth/providers/credentials\");\n/* harmony import */ var next_auth_providers_credentials__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_auth_providers_credentials__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _models_User__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/models/User */ \"(api)/./models/User.js\");\n/* harmony import */ var _utils_db__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/utils/db */ \"(api)/./utils/db.js\");\n\n// este modulo se utiliza para comparar contraseñas cifradas.\n\n// Este módulo proporciona la funcionalidad de autenticación para Next.js.\n\n// Este proveedor permite la autenticación basada en credenciales de usuario, como el correo electrónico y la contraseña.\n\n\n// Este objeto contiene funciones para conectar y desconectar la base de datos.\n// Codigo para configurar la autenticación de NextAuth usando el proveedor de credenciales CredentialsProvider y el metodo de autenticacion JSON Web Token\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (next_auth_next__WEBPACK_IMPORTED_MODULE_1___default()({\n    // Exporta por defecto una instancia de configuración de NextAuth.\n    session: {\n        strategy: \"jwt\"\n    },\n    // Configura la estrategia de sesión como \"jwt\" (JSON Web Token). Esto indica que se utilizarán tokens JWT para manejar las sesiones de autenticación.\n    callbacks: {\n        // Define callbacks para manipular los tokens y las sesiones.\n        async jwt ({ token, user }) {\n            // Este callback se llama al firmar y verificar tokens JWT. Aquí se agrega el campo _id y isAdmin al token JWT si existen en el objeto user.\n            if (user?._id) token._id = user._id;\n            if (user?.isAdmin) token.isAdmin = user.isAdmin;\n            return token;\n        },\n        async session ({ session, token }) {\n            // Este callback se llama para crear el objeto de sesión cuando un usuario inicia sesión. Aquí se agrega el campo _id y isAdmin al objeto de sesión si existen en el token JWT.\n            if (token?._id) session.user._id = token._id;\n            if (token?.isAdmin) session.user.isAdmin = token.isAdmin;\n            return session;\n        }\n    },\n    providers: [\n        // Define los proveedores de autenticación para NextAuth.\n        next_auth_providers_credentials__WEBPACK_IMPORTED_MODULE_2___default()({\n            // Configura el proveedor de credenciales.\n            async authorize (credentials) {\n                // Este callback se llama al intentar autenticar a un usuario utilizando credenciales \n                // Aquí se realiza la verificación de las credenciales en la base de datos.\n                await _utils_db__WEBPACK_IMPORTED_MODULE_4__[\"default\"].connect();\n                // Conecta a la base de datos antes de realizar la consulta.\n                const user = await _models_User__WEBPACK_IMPORTED_MODULE_3__[\"default\"].findOne({\n                    // Busca en la colección de usuarios el usuario con el correo electrónico proporcionado en las credenciales.\n                    email: credentials.email\n                });\n                await _utils_db__WEBPACK_IMPORTED_MODULE_4__[\"default\"].disconnect();\n                // Desconecta de la base de datos después de realizar la consulta.\n                if (user && bcryptjs__WEBPACK_IMPORTED_MODULE_0___default().compareSync(credentials.password, user.password)) {\n                    // Verifica si se encuentra un usuario y si la contraseña proporcionada coincide con la contraseña almacenada en la base de datos utilizando bcryptjs.compareSync(). Si la verificación es exitosa, se devuelve un objeto con la información del usuario que se almacenará en el token JWT y se utilizará en la sesión.\n                    return {\n                        _id: user._id,\n                        name: user.name,\n                        email: user.email,\n                        image: \"f\",\n                        isAdmin: user.isAdmin\n                    };\n                }\n                throw new Error(\"Invalid email or password\");\n            }\n        })\n    ]\n}));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9wYWdlcy9hcGkvYXV0aC9bLi4ubmV4dGF1dGhdLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQUFnQztBQUNoQyw2REFBNkQ7QUFDdkI7QUFDdEMsMEVBQTBFO0FBQ1I7QUFDbEUseUhBQXlIO0FBQ3hGO0FBQ0w7QUFDNUIsK0VBQStFO0FBSS9FLDBKQUEwSjtBQUMxSixpRUFBZUMscURBQVFBLENBQUM7SUFDcEIsa0VBQWtFO0lBQ2xFSSxTQUFTO1FBQ0xDLFVBQVU7SUFDZDtJQUNBLHNKQUFzSjtJQUN0SkMsV0FBVztRQUNQLDZEQUE2RDtRQUM3RCxNQUFNQyxLQUFJLEVBQUVDLEtBQUssRUFBRUMsSUFBSSxFQUFFO1lBQ3JCLDRJQUE0STtZQUM1SSxJQUFJQSxNQUFNQyxLQUFLRixNQUFNRSxHQUFHLEdBQUdELEtBQUtDLEdBQUc7WUFDbkMsSUFBSUQsTUFBTUUsU0FBU0gsTUFBTUcsT0FBTyxHQUFHRixLQUFLRSxPQUFPO1lBQy9DLE9BQU9IO1FBQ1g7UUFDQSxNQUFNSixTQUFRLEVBQUVBLE9BQU8sRUFBRUksS0FBSyxFQUFFO1lBQzVCLCtLQUErSztZQUMvSyxJQUFJQSxPQUFPRSxLQUFLTixRQUFRSyxJQUFJLENBQUNDLEdBQUcsR0FBR0YsTUFBTUUsR0FBRztZQUM1QyxJQUFJRixPQUFPRyxTQUFTUCxRQUFRSyxJQUFJLENBQUNFLE9BQU8sR0FBR0gsTUFBTUcsT0FBTztZQUN4RCxPQUFPUDtRQUNYO0lBQ0o7SUFDQVEsV0FBVztRQUNQLHlEQUF5RDtRQUN6RFgsc0VBQW1CQSxDQUFDO1lBQ2hCLDBDQUEwQztZQUMxQyxNQUFNWSxXQUFVQyxXQUFXO2dCQUN2QixzRkFBc0Y7Z0JBRXRGLDJFQUEyRTtnQkFDM0UsTUFBTVgseURBQVU7Z0JBQ2hCLDREQUE0RDtnQkFDNUQsTUFBTU0sT0FBTyxNQUFNUCw0REFBWSxDQUFDO29CQUM1Qiw0R0FBNEc7b0JBQzVHZSxPQUFPSCxZQUFZRyxLQUFLO2dCQUM1QjtnQkFDQSxNQUFNZCw0REFBYTtnQkFDbkIsa0VBQWtFO2dCQUNsRSxJQUFJTSxRQUFRViwyREFBb0IsQ0FBQ2UsWUFBWU0sUUFBUSxFQUFFWCxLQUFLVyxRQUFRLEdBQUc7b0JBQ25FLHVUQUF1VDtvQkFDdlQsT0FBTzt3QkFDSFYsS0FBS0QsS0FBS0MsR0FBRzt3QkFDYlcsTUFBTVosS0FBS1ksSUFBSTt3QkFDZkosT0FBT1IsS0FBS1EsS0FBSzt3QkFDakJLLE9BQU87d0JBQ1BYLFNBQVNGLEtBQUtFLE9BQU87b0JBQ3pCO2dCQUNKO2dCQUNBLE1BQU0sSUFBSVksTUFBTTtZQUNwQjtRQUNKO0tBQ0g7QUFDTCxFQUFFLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9uZXh0LXRhaWx3aW5kLWFtYXpvbmEvLi9wYWdlcy9hcGkvYXV0aC9bLi4ubmV4dGF1dGhdLmpzPzUyN2YiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGJjcnlwdGpzIGZyb20gJ2JjcnlwdGpzJztcclxuLy8gZXN0ZSBtb2R1bG8gc2UgdXRpbGl6YSBwYXJhIGNvbXBhcmFyIGNvbnRyYXNlw7FhcyBjaWZyYWRhcy5cclxuaW1wb3J0IE5leHRBdXRoIGZyb20gXCJuZXh0LWF1dGgvbmV4dFwiO1xyXG4vLyBFc3RlIG3Ds2R1bG8gcHJvcG9yY2lvbmEgbGEgZnVuY2lvbmFsaWRhZCBkZSBhdXRlbnRpY2FjacOzbiBwYXJhIE5leHQuanMuXHJcbmltcG9ydCBDcmVkZW50aWFsc1Byb3ZpZGVyIGZyb20gJ25leHQtYXV0aC9wcm92aWRlcnMvY3JlZGVudGlhbHMnO1xyXG4vLyBFc3RlIHByb3ZlZWRvciBwZXJtaXRlIGxhIGF1dGVudGljYWNpw7NuIGJhc2FkYSBlbiBjcmVkZW5jaWFsZXMgZGUgdXN1YXJpbywgY29tbyBlbCBjb3JyZW8gZWxlY3Ryw7NuaWNvIHkgbGEgY29udHJhc2XDsWEuXHJcbmltcG9ydCBVc2VyIGZyb20gXCJAL21vZGVscy9Vc2VyXCI7XHJcbmltcG9ydCBkYiBmcm9tIFwiQC91dGlscy9kYlwiO1xyXG4vLyBFc3RlIG9iamV0byBjb250aWVuZSBmdW5jaW9uZXMgcGFyYSBjb25lY3RhciB5IGRlc2NvbmVjdGFyIGxhIGJhc2UgZGUgZGF0b3MuXHJcblxyXG5cclxuXHJcbi8vIENvZGlnbyBwYXJhIGNvbmZpZ3VyYXIgbGEgYXV0ZW50aWNhY2nDs24gZGUgTmV4dEF1dGggdXNhbmRvIGVsIHByb3ZlZWRvciBkZSBjcmVkZW5jaWFsZXMgQ3JlZGVudGlhbHNQcm92aWRlciB5IGVsIG1ldG9kbyBkZSBhdXRlbnRpY2FjaW9uIEpTT04gV2ViIFRva2VuXHJcbmV4cG9ydCBkZWZhdWx0IE5leHRBdXRoKHtcclxuICAgIC8vIEV4cG9ydGEgcG9yIGRlZmVjdG8gdW5hIGluc3RhbmNpYSBkZSBjb25maWd1cmFjacOzbiBkZSBOZXh0QXV0aC5cclxuICAgIHNlc3Npb246IHtcclxuICAgICAgICBzdHJhdGVneTogJ2p3dCcsXHJcbiAgICB9LFxyXG4gICAgLy8gQ29uZmlndXJhIGxhIGVzdHJhdGVnaWEgZGUgc2VzacOzbiBjb21vIFwiand0XCIgKEpTT04gV2ViIFRva2VuKS4gRXN0byBpbmRpY2EgcXVlIHNlIHV0aWxpemFyw6FuIHRva2VucyBKV1QgcGFyYSBtYW5lamFyIGxhcyBzZXNpb25lcyBkZSBhdXRlbnRpY2FjacOzbi5cclxuICAgIGNhbGxiYWNrczoge1xyXG4gICAgICAgIC8vIERlZmluZSBjYWxsYmFja3MgcGFyYSBtYW5pcHVsYXIgbG9zIHRva2VucyB5IGxhcyBzZXNpb25lcy5cclxuICAgICAgICBhc3luYyBqd3QoeyB0b2tlbiwgdXNlciB9KXtcclxuICAgICAgICAgICAgLy8gRXN0ZSBjYWxsYmFjayBzZSBsbGFtYSBhbCBmaXJtYXIgeSB2ZXJpZmljYXIgdG9rZW5zIEpXVC4gQXF1w60gc2UgYWdyZWdhIGVsIGNhbXBvIF9pZCB5IGlzQWRtaW4gYWwgdG9rZW4gSldUIHNpIGV4aXN0ZW4gZW4gZWwgb2JqZXRvIHVzZXIuXHJcbiAgICAgICAgICAgIGlmICh1c2VyPy5faWQpIHRva2VuLl9pZCA9IHVzZXIuX2lkO1xyXG4gICAgICAgICAgICBpZiAodXNlcj8uaXNBZG1pbikgdG9rZW4uaXNBZG1pbiA9IHVzZXIuaXNBZG1pbjtcclxuICAgICAgICAgICAgcmV0dXJuIHRva2VuO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgYXN5bmMgc2Vzc2lvbih7IHNlc3Npb24sIHRva2VuIH0pIHtcclxuICAgICAgICAgICAgLy8gRXN0ZSBjYWxsYmFjayBzZSBsbGFtYSBwYXJhIGNyZWFyIGVsIG9iamV0byBkZSBzZXNpw7NuIGN1YW5kbyB1biB1c3VhcmlvIGluaWNpYSBzZXNpw7NuLiBBcXXDrSBzZSBhZ3JlZ2EgZWwgY2FtcG8gX2lkIHkgaXNBZG1pbiBhbCBvYmpldG8gZGUgc2VzacOzbiBzaSBleGlzdGVuIGVuIGVsIHRva2VuIEpXVC5cclxuICAgICAgICAgICAgaWYgKHRva2VuPy5faWQpIHNlc3Npb24udXNlci5faWQgPSB0b2tlbi5faWQ7XHJcbiAgICAgICAgICAgIGlmICh0b2tlbj8uaXNBZG1pbikgc2Vzc2lvbi51c2VyLmlzQWRtaW4gPSB0b2tlbi5pc0FkbWluO1xyXG4gICAgICAgICAgICByZXR1cm4gc2Vzc2lvbjtcclxuICAgICAgICB9LFxyXG4gICAgfSxcclxuICAgIHByb3ZpZGVyczogW1xyXG4gICAgICAgIC8vIERlZmluZSBsb3MgcHJvdmVlZG9yZXMgZGUgYXV0ZW50aWNhY2nDs24gcGFyYSBOZXh0QXV0aC5cclxuICAgICAgICBDcmVkZW50aWFsc1Byb3ZpZGVyKHtcclxuICAgICAgICAgICAgLy8gQ29uZmlndXJhIGVsIHByb3ZlZWRvciBkZSBjcmVkZW5jaWFsZXMuXHJcbiAgICAgICAgICAgIGFzeW5jIGF1dGhvcml6ZShjcmVkZW50aWFscyl7XHJcbiAgICAgICAgICAgICAgICAvLyBFc3RlIGNhbGxiYWNrIHNlIGxsYW1hIGFsIGludGVudGFyIGF1dGVudGljYXIgYSB1biB1c3VhcmlvIHV0aWxpemFuZG8gY3JlZGVuY2lhbGVzIFxyXG5cclxuICAgICAgICAgICAgICAgIC8vIEFxdcOtIHNlIHJlYWxpemEgbGEgdmVyaWZpY2FjacOzbiBkZSBsYXMgY3JlZGVuY2lhbGVzIGVuIGxhIGJhc2UgZGUgZGF0b3MuXHJcbiAgICAgICAgICAgICAgICBhd2FpdCBkYi5jb25uZWN0KCk7XHJcbiAgICAgICAgICAgICAgICAvLyBDb25lY3RhIGEgbGEgYmFzZSBkZSBkYXRvcyBhbnRlcyBkZSByZWFsaXphciBsYSBjb25zdWx0YS5cclxuICAgICAgICAgICAgICAgIGNvbnN0IHVzZXIgPSBhd2FpdCBVc2VyLmZpbmRPbmUoe1xyXG4gICAgICAgICAgICAgICAgICAgIC8vIEJ1c2NhIGVuIGxhIGNvbGVjY2nDs24gZGUgdXN1YXJpb3MgZWwgdXN1YXJpbyBjb24gZWwgY29ycmVvIGVsZWN0csOzbmljbyBwcm9wb3JjaW9uYWRvIGVuIGxhcyBjcmVkZW5jaWFsZXMuXHJcbiAgICAgICAgICAgICAgICAgICAgZW1haWw6IGNyZWRlbnRpYWxzLmVtYWlsLFxyXG4gICAgICAgICAgICAgICAgfSk7XHJcbiAgICAgICAgICAgICAgICBhd2FpdCBkYi5kaXNjb25uZWN0KCk7XHJcbiAgICAgICAgICAgICAgICAvLyBEZXNjb25lY3RhIGRlIGxhIGJhc2UgZGUgZGF0b3MgZGVzcHXDqXMgZGUgcmVhbGl6YXIgbGEgY29uc3VsdGEuXHJcbiAgICAgICAgICAgICAgICBpZiAodXNlciAmJiBiY3J5cHRqcy5jb21wYXJlU3luYyhjcmVkZW50aWFscy5wYXNzd29yZCwgdXNlci5wYXNzd29yZCkpIHtcclxuICAgICAgICAgICAgICAgICAgICAvLyBWZXJpZmljYSBzaSBzZSBlbmN1ZW50cmEgdW4gdXN1YXJpbyB5IHNpIGxhIGNvbnRyYXNlw7FhIHByb3BvcmNpb25hZGEgY29pbmNpZGUgY29uIGxhIGNvbnRyYXNlw7FhIGFsbWFjZW5hZGEgZW4gbGEgYmFzZSBkZSBkYXRvcyB1dGlsaXphbmRvIGJjcnlwdGpzLmNvbXBhcmVTeW5jKCkuIFNpIGxhIHZlcmlmaWNhY2nDs24gZXMgZXhpdG9zYSwgc2UgZGV2dWVsdmUgdW4gb2JqZXRvIGNvbiBsYSBpbmZvcm1hY2nDs24gZGVsIHVzdWFyaW8gcXVlIHNlIGFsbWFjZW5hcsOhIGVuIGVsIHRva2VuIEpXVCB5IHNlIHV0aWxpemFyw6EgZW4gbGEgc2VzacOzbi5cclxuICAgICAgICAgICAgICAgICAgICByZXR1cm4ge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBfaWQ6IHVzZXIuX2lkLFxyXG4gICAgICAgICAgICAgICAgICAgICAgICBuYW1lOiB1c2VyLm5hbWUsXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGVtYWlsOiB1c2VyLmVtYWlsLFxyXG4gICAgICAgICAgICAgICAgICAgICAgICBpbWFnZTogJ2YnLFxyXG4gICAgICAgICAgICAgICAgICAgICAgICBpc0FkbWluOiB1c2VyLmlzQWRtaW4sXHJcbiAgICAgICAgICAgICAgICAgICAgfTtcclxuICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIHRocm93IG5ldyBFcnJvcignSW52YWxpZCBlbWFpbCBvciBwYXNzd29yZCcpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfSlcclxuICAgIF1cclxufSk7ICJdLCJuYW1lcyI6WyJiY3J5cHRqcyIsIk5leHRBdXRoIiwiQ3JlZGVudGlhbHNQcm92aWRlciIsIlVzZXIiLCJkYiIsInNlc3Npb24iLCJzdHJhdGVneSIsImNhbGxiYWNrcyIsImp3dCIsInRva2VuIiwidXNlciIsIl9pZCIsImlzQWRtaW4iLCJwcm92aWRlcnMiLCJhdXRob3JpemUiLCJjcmVkZW50aWFscyIsImNvbm5lY3QiLCJmaW5kT25lIiwiZW1haWwiLCJkaXNjb25uZWN0IiwiY29tcGFyZVN5bmMiLCJwYXNzd29yZCIsIm5hbWUiLCJpbWFnZSIsIkVycm9yIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./pages/api/auth/[...nextauth].js\n");
 
-// Este módulo proporciona la funcionalidad de autenticación para Next.js.
+/***/ }),
 
-// Este proveedor permite la autenticación basada en credenciales de usuario, como el correo electrónico y la contraseña.
+/***/ "(api)/./utils/db.js":
+/*!*********************!*\
+  !*** ./utils/db.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-// Este objeto contiene funciones para conectar y desconectar la base de datos.
-// Codigo para configurar la autenticación de NextAuth usando el proveedor de credenciales CredentialsProvider y el metodo de autenticacion JSON Web Token
-/* harmony default export */ const _nextauth_ = (next_default()({
-    // Exporta por defecto una instancia de configuración de NextAuth.
-    session: {
-        strategy: "jwt"
-    },
-    // Configura la estrategia de sesión como "jwt" (JSON Web Token). Esto indica que se utilizarán tokens JWT para manejar las sesiones de autenticación.
-    callbacks: {
-        // Define callbacks para manipular los tokens y las sesiones.
-        async jwt ({ token, user }) {
-            // Este callback se llama al firmar y verificar tokens JWT. Aquí se agrega el campo _id y isAdmin al token JWT si existen en el objeto user.
-            if (user?._id) token._id = user._id;
-            if (user?.isAdmin) token.isAdmin = user.isAdmin;
-            return token;
-        },
-        async session ({ session, token }) {
-            // Este callback se llama para crear el objeto de sesión cuando un usuario inicia sesión. Aquí se agrega el campo _id y isAdmin al objeto de sesión si existen en el token JWT.
-            if (token?._id) session.user._id = token._id;
-            if (token?.isAdmin) session.user.isAdmin = token.isAdmin;
-            return session;
-        }
-    },
-    providers: [
-        // Define los proveedores de autenticación para NextAuth.
-        credentials_default()({
-            // Configura el proveedor de credenciales.
-            async authorize (credentials) {
-                // Este callback se llama al intentar autenticar a un usuario utilizando credenciales 
-                // Aquí se realiza la verificación de las credenciales en la base de datos.
-                await db/* default */.Z.connect();
-                // Conecta a la base de datos antes de realizar la consulta.
-                const user = await User/* default */.Z.findOne({
-                    // Busca en la colección de usuarios el usuario con el correo electrónico proporcionado en las credenciales.
-                    email: credentials.email
-                });
-                await db/* default */.Z.disconnect();
-                // Desconecta de la base de datos después de realizar la consulta.
-                if (user && external_bcryptjs_default().compareSync(credentials.password, user.password)) {
-                    // Verifica si se encuentra un usuario y si la contraseña proporcionada coincide con la contraseña almacenada en la base de datos utilizando bcryptjs.compareSync(). Si la verificación es exitosa, se devuelve un objeto con la información del usuario que se almacenará en el token JWT y se utilizará en la sesión.
-                    return {
-                        _id: user._id,
-                        name: user.name,
-                        email: user.email,
-                        image: "f",
-                        isAdmin: user.isAdmin
-                    };
-                }
-                throw new Error("Invalid email or password");
-            }
-        })
-    ]
-}));
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nconst connection = {};\n// objeto connection que se utilizará para almacenar el estado de la conexión a la base de datos.\nasync function connect() {\n    // Define una función asincrónica llamada connect que establece la conexión con la base de datos MongoDB.\n    if (connection.isConnected) {\n        console.log(\"already connected\");\n        return;\n    // se verifica si ya hay una conexión establecida\n    }\n    if ((mongoose__WEBPACK_IMPORTED_MODULE_0___default().connections).length > 0) {\n        // se verifica si hay alguna conexión de Mongoose ya existente.\n        connection.isConnected = (mongoose__WEBPACK_IMPORTED_MODULE_0___default().connections)[0].readyState;\n        // Se guarda el estado de la primera conexión en connection.isConnected.\n        if (connection.isConnected === 1) {\n            // significa que la conexión existe y está lista para su uso. Se muestra un mensaje en la consola y se devuelve la función para finalizar el proceso de conexión.\n            console.log(\"use previous connection\");\n            return;\n        }\n        // Si no hay conexión existente o si el estado de la conexión es diferente de 1, se desconecta de todas las conexiones existentes llamando a mongoose.disconnect().\n        await mongoose__WEBPACK_IMPORTED_MODULE_0___default().disconnect();\n    }\n    // se establece una nueva conexión\n    const db = await mongoose__WEBPACK_IMPORTED_MODULE_0___default().connect(process.env.MONGODB_URI);\n    // process.env.MONGODB_URI es la URL de conexión de MongoDB que se obtiene de las variables de entorno.\n    console.log(\"new connection\");\n    // Después de establecer la nueva conexión, se guarda el estado de la conexión en connection.isConnected para su uso futuro.\n    connection.isConnected = db.connections[0].readyState;\n}\nasync function disconnect() {\n    // Define una función asincrónica llamada disconnect que se utiliza para desconectar de la base de datos.\n    if (connection.isConnected) {\n        // se verifica si hay una conexión establecida\n        if (false) {} else {\n            console.log(\"not disconnected\");\n        }\n    }\n}\nfunction convertDocToObj(doc) {\n    // función que convierte un documento de Mongoose en un objeto JavaScript plano.\n    // se convierten los valores de _id, createdAt y updatedAt del documento en cadenas de texto utilizando el método toString()  para facilitar el manejo y la manipulación de los datos del documento.\n    doc._id = doc._id.toString();\n    doc.createdAt = doc.createdAt.toString();\n    doc.updatedAt = doc.updatedAt.toString();\n    return doc;\n}\nconst db = {\n    connect,\n    disconnect,\n    convertDocToObj\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (db); // Crea un objeto llamado db que contiene las funciones connect, disconnect y convertDocToObj.\n // export default db;: Exporta el objeto db como el valor predeterminado del módulo, lo que permite importar estas funciones en otros archivos y utilizarlas para conectar y desconectar la base de datos MongoDB.\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi91dGlscy9kYi5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFBZ0M7QUFFaEMsTUFBTUMsYUFBYSxDQUFDO0FBQ3BCLGlHQUFpRztBQUVqRyxlQUFlQztJQUNiLHlHQUF5RztJQUN6RyxJQUFJRCxXQUFXRSxXQUFXLEVBQUU7UUFDMUJDLFFBQVFDLEdBQUcsQ0FBQztRQUNaO0lBQ0EsaURBQWlEO0lBQ25EO0lBQ0EsSUFBSUwsNkRBQW9CLENBQUNPLE1BQU0sR0FBRyxHQUFHO1FBQ25DLCtEQUErRDtRQUMvRE4sV0FBV0UsV0FBVyxHQUFHSCw2REFBb0IsQ0FBQyxFQUFFLENBQUNRLFVBQVU7UUFDM0Qsd0VBQXdFO1FBQ3hFLElBQUlQLFdBQVdFLFdBQVcsS0FBSyxHQUFHO1lBQ2hDLGlLQUFpSztZQUNqS0MsUUFBUUMsR0FBRyxDQUFDO1lBQ1o7UUFDRjtRQUNBLG1LQUFtSztRQUNuSyxNQUFNTCwwREFBbUI7SUFDM0I7SUFDQSxrQ0FBa0M7SUFDbEMsTUFBTVUsS0FBSyxNQUFNVix1REFBZ0IsQ0FBQ1csUUFBUUMsR0FBRyxDQUFDQyxXQUFXO0lBQ3pELHVHQUF1RztJQUN2R1QsUUFBUUMsR0FBRyxDQUFDO0lBQ1osNEhBQTRIO0lBQzVISixXQUFXRSxXQUFXLEdBQUdPLEdBQUdKLFdBQVcsQ0FBQyxFQUFFLENBQUNFLFVBQVU7QUFDdkQ7QUFFQSxlQUFlQztJQUNiLHlHQUF5RztJQUN6RyxJQUFJUixXQUFXRSxXQUFXLEVBQUU7UUFDMUIsOENBQThDO1FBQzlDLElBQUlRLEtBQXFDLEVBQUUsRUFJMUMsTUFBTTtZQUNMUCxRQUFRQyxHQUFHLENBQUM7UUFDZDtJQUNGO0FBQ0Y7QUFDQSxTQUFTUyxnQkFBZ0JDLEdBQUc7SUFDMUIsZ0ZBQWdGO0lBQ2hGLG9NQUFvTTtJQUNwTUEsSUFBSUMsR0FBRyxHQUFHRCxJQUFJQyxHQUFHLENBQUNDLFFBQVE7SUFDMUJGLElBQUlHLFNBQVMsR0FBR0gsSUFBSUcsU0FBUyxDQUFDRCxRQUFRO0lBQ3RDRixJQUFJSSxTQUFTLEdBQUdKLElBQUlJLFNBQVMsQ0FBQ0YsUUFBUTtJQUN0QyxPQUFPRjtBQUNUO0FBRUEsTUFBTUwsS0FBSztJQUFFUjtJQUFTTztJQUFZSztBQUFnQjtBQUNsRCxpRUFBZUosRUFBRUEsRUFBQyxDQUNsQiw4RkFBOEY7Q0FDOUYsa05BQWtOIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbmV4dC10YWlsd2luZC1hbWF6b25hLy4vdXRpbHMvZGIuanM/N2NiMiJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgbW9uZ29vc2UgZnJvbSBcIm1vbmdvb3NlXCI7XHJcblxyXG5jb25zdCBjb25uZWN0aW9uID0ge307XHJcbi8vIG9iamV0byBjb25uZWN0aW9uIHF1ZSBzZSB1dGlsaXphcsOhIHBhcmEgYWxtYWNlbmFyIGVsIGVzdGFkbyBkZSBsYSBjb25leGnDs24gYSBsYSBiYXNlIGRlIGRhdG9zLlxyXG5cclxuYXN5bmMgZnVuY3Rpb24gY29ubmVjdCgpIHtcclxuICAvLyBEZWZpbmUgdW5hIGZ1bmNpw7NuIGFzaW5jcsOzbmljYSBsbGFtYWRhIGNvbm5lY3QgcXVlIGVzdGFibGVjZSBsYSBjb25leGnDs24gY29uIGxhIGJhc2UgZGUgZGF0b3MgTW9uZ29EQi5cclxuICBpZiAoY29ubmVjdGlvbi5pc0Nvbm5lY3RlZCkge1xyXG4gICAgY29uc29sZS5sb2coXCJhbHJlYWR5IGNvbm5lY3RlZFwiKTtcclxuICAgIHJldHVybjtcclxuICAgIC8vIHNlIHZlcmlmaWNhIHNpIHlhIGhheSB1bmEgY29uZXhpw7NuIGVzdGFibGVjaWRhXHJcbiAgfVxyXG4gIGlmIChtb25nb29zZS5jb25uZWN0aW9ucy5sZW5ndGggPiAwKSB7XHJcbiAgICAvLyBzZSB2ZXJpZmljYSBzaSBoYXkgYWxndW5hIGNvbmV4acOzbiBkZSBNb25nb29zZSB5YSBleGlzdGVudGUuXHJcbiAgICBjb25uZWN0aW9uLmlzQ29ubmVjdGVkID0gbW9uZ29vc2UuY29ubmVjdGlvbnNbMF0ucmVhZHlTdGF0ZTtcclxuICAgIC8vIFNlIGd1YXJkYSBlbCBlc3RhZG8gZGUgbGEgcHJpbWVyYSBjb25leGnDs24gZW4gY29ubmVjdGlvbi5pc0Nvbm5lY3RlZC5cclxuICAgIGlmIChjb25uZWN0aW9uLmlzQ29ubmVjdGVkID09PSAxKSB7XHJcbiAgICAgIC8vIHNpZ25pZmljYSBxdWUgbGEgY29uZXhpw7NuIGV4aXN0ZSB5IGVzdMOhIGxpc3RhIHBhcmEgc3UgdXNvLiBTZSBtdWVzdHJhIHVuIG1lbnNhamUgZW4gbGEgY29uc29sYSB5IHNlIGRldnVlbHZlIGxhIGZ1bmNpw7NuIHBhcmEgZmluYWxpemFyIGVsIHByb2Nlc28gZGUgY29uZXhpw7NuLlxyXG4gICAgICBjb25zb2xlLmxvZyhcInVzZSBwcmV2aW91cyBjb25uZWN0aW9uXCIpO1xyXG4gICAgICByZXR1cm47XHJcbiAgICB9XHJcbiAgICAvLyBTaSBubyBoYXkgY29uZXhpw7NuIGV4aXN0ZW50ZSBvIHNpIGVsIGVzdGFkbyBkZSBsYSBjb25leGnDs24gZXMgZGlmZXJlbnRlIGRlIDEsIHNlIGRlc2NvbmVjdGEgZGUgdG9kYXMgbGFzIGNvbmV4aW9uZXMgZXhpc3RlbnRlcyBsbGFtYW5kbyBhIG1vbmdvb3NlLmRpc2Nvbm5lY3QoKS5cclxuICAgIGF3YWl0IG1vbmdvb3NlLmRpc2Nvbm5lY3QoKTtcclxuICB9XHJcbiAgLy8gc2UgZXN0YWJsZWNlIHVuYSBudWV2YSBjb25leGnDs25cclxuICBjb25zdCBkYiA9IGF3YWl0IG1vbmdvb3NlLmNvbm5lY3QocHJvY2Vzcy5lbnYuTU9OR09EQl9VUkkpO1xyXG4gIC8vIHByb2Nlc3MuZW52Lk1PTkdPREJfVVJJIGVzIGxhIFVSTCBkZSBjb25leGnDs24gZGUgTW9uZ29EQiBxdWUgc2Ugb2J0aWVuZSBkZSBsYXMgdmFyaWFibGVzIGRlIGVudG9ybm8uXHJcbiAgY29uc29sZS5sb2coXCJuZXcgY29ubmVjdGlvblwiKTtcclxuICAvLyBEZXNwdcOpcyBkZSBlc3RhYmxlY2VyIGxhIG51ZXZhIGNvbmV4acOzbiwgc2UgZ3VhcmRhIGVsIGVzdGFkbyBkZSBsYSBjb25leGnDs24gZW4gY29ubmVjdGlvbi5pc0Nvbm5lY3RlZCBwYXJhIHN1IHVzbyBmdXR1cm8uXHJcbiAgY29ubmVjdGlvbi5pc0Nvbm5lY3RlZCA9IGRiLmNvbm5lY3Rpb25zWzBdLnJlYWR5U3RhdGU7XHJcbn1cclxuXHJcbmFzeW5jIGZ1bmN0aW9uIGRpc2Nvbm5lY3QoKSB7XHJcbiAgLy8gRGVmaW5lIHVuYSBmdW5jacOzbiBhc2luY3LDs25pY2EgbGxhbWFkYSBkaXNjb25uZWN0IHF1ZSBzZSB1dGlsaXphIHBhcmEgZGVzY29uZWN0YXIgZGUgbGEgYmFzZSBkZSBkYXRvcy5cclxuICBpZiAoY29ubmVjdGlvbi5pc0Nvbm5lY3RlZCkge1xyXG4gICAgLy8gc2UgdmVyaWZpY2Egc2kgaGF5IHVuYSBjb25leGnDs24gZXN0YWJsZWNpZGFcclxuICAgIGlmIChwcm9jZXNzLmVudi5OT0RFX0VOViA9PT0gXCJwcm9kdWN0aW9uXCIpIHtcclxuICAgICAgLy8gU2kgZWwgZW50b3JubyBkZSBlamVjdWNpw7NuIGVzIGRlIHByb2R1Y2Npw7NuIChwcm9jZXNzLmVudi5OT0RFX0VOViA9PT0gJ3Byb2R1Y3Rpb24nKSwgc2UgZGVzY29uZWN0YSB5IHNlIGVzdGFibGVjZSBjb25uZWN0aW9uLmlzQ29ubmVjdGVkIGNvbW8gZmFsc28uIEVzdG8gc2UgaGFjZSBwYXJhIGFzZWd1cmFyc2UgZGUgcXVlIGxhIGFwbGljYWNpw7NuIHNlIGRlc2NvbmVjdGUgZGUgbGEgYmFzZSBkZSBkYXRvcyBlbiB1biBlbnRvcm5vIGRlIHByb2R1Y2Npw7NuLlxyXG4gICAgICBhd2FpdCBtb25nb29zZS5kaXNjb25uZWN0KCk7XHJcbiAgICAgIGNvbm5lY3Rpb24uaXNDb25uZWN0ZWQgPSBmYWxzZTtcclxuICAgIH0gZWxzZSB7XHJcbiAgICAgIGNvbnNvbGUubG9nKFwibm90IGRpc2Nvbm5lY3RlZFwiKTtcclxuICAgIH1cclxuICB9XHJcbn1cclxuZnVuY3Rpb24gY29udmVydERvY1RvT2JqKGRvYykge1xyXG4gIC8vIGZ1bmNpw7NuIHF1ZSBjb252aWVydGUgdW4gZG9jdW1lbnRvIGRlIE1vbmdvb3NlIGVuIHVuIG9iamV0byBKYXZhU2NyaXB0IHBsYW5vLlxyXG4gIC8vIHNlIGNvbnZpZXJ0ZW4gbG9zIHZhbG9yZXMgZGUgX2lkLCBjcmVhdGVkQXQgeSB1cGRhdGVkQXQgZGVsIGRvY3VtZW50byBlbiBjYWRlbmFzIGRlIHRleHRvIHV0aWxpemFuZG8gZWwgbcOpdG9kbyB0b1N0cmluZygpICBwYXJhIGZhY2lsaXRhciBlbCBtYW5lam8geSBsYSBtYW5pcHVsYWNpw7NuIGRlIGxvcyBkYXRvcyBkZWwgZG9jdW1lbnRvLlxyXG4gIGRvYy5faWQgPSBkb2MuX2lkLnRvU3RyaW5nKCk7XHJcbiAgZG9jLmNyZWF0ZWRBdCA9IGRvYy5jcmVhdGVkQXQudG9TdHJpbmcoKTtcclxuICBkb2MudXBkYXRlZEF0ID0gZG9jLnVwZGF0ZWRBdC50b1N0cmluZygpO1xyXG4gIHJldHVybiBkb2M7XHJcbn1cclxuXHJcbmNvbnN0IGRiID0geyBjb25uZWN0LCBkaXNjb25uZWN0LCBjb252ZXJ0RG9jVG9PYmogfTtcclxuZXhwb3J0IGRlZmF1bHQgZGI7XHJcbi8vIENyZWEgdW4gb2JqZXRvIGxsYW1hZG8gZGIgcXVlIGNvbnRpZW5lIGxhcyBmdW5jaW9uZXMgY29ubmVjdCwgZGlzY29ubmVjdCB5IGNvbnZlcnREb2NUb09iai5cclxuLy8gZXhwb3J0IGRlZmF1bHQgZGI7OiBFeHBvcnRhIGVsIG9iamV0byBkYiBjb21vIGVsIHZhbG9yIHByZWRldGVybWluYWRvIGRlbCBtw7NkdWxvLCBsbyBxdWUgcGVybWl0ZSBpbXBvcnRhciBlc3RhcyBmdW5jaW9uZXMgZW4gb3Ryb3MgYXJjaGl2b3MgeSB1dGlsaXphcmxhcyBwYXJhIGNvbmVjdGFyIHkgZGVzY29uZWN0YXIgbGEgYmFzZSBkZSBkYXRvcyBNb25nb0RCLlxyXG4iXSwibmFtZXMiOlsibW9uZ29vc2UiLCJjb25uZWN0aW9uIiwiY29ubmVjdCIsImlzQ29ubmVjdGVkIiwiY29uc29sZSIsImxvZyIsImNvbm5lY3Rpb25zIiwibGVuZ3RoIiwicmVhZHlTdGF0ZSIsImRpc2Nvbm5lY3QiLCJkYiIsInByb2Nlc3MiLCJlbnYiLCJNT05HT0RCX1VSSSIsImNvbnZlcnREb2NUb09iaiIsImRvYyIsIl9pZCIsInRvU3RyaW5nIiwiY3JlYXRlZEF0IiwidXBkYXRlZEF0Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./utils/db.js\n");
 
 /***/ })
 
@@ -154,7 +90,7 @@ var db = __webpack_require__(5690);
 var __webpack_require__ = require("../../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [690], () => (__webpack_exec__(8880)));
+var __webpack_exports__ = (__webpack_exec__("(api)/./pages/api/auth/[...nextauth].js"));
 module.exports = __webpack_exports__;
 
 })();

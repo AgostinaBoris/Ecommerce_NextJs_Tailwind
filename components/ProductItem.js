@@ -21,11 +21,11 @@ const ProductItem = ({ product }) => {
                 <h2 className="text-lg">{product.name}</h2>
         
         </Link>
-        <p className="mb-2">{product.brand}</p>
-        <p>${product.price}</p>
-        <button className="primary-button" type="button">
+        <p className="mb-2 py-2">{product.brand}</p>
+        <p className="py-2 mb-2">${product.price}</p>
+        <Link className="primary-button" href={`/product/${product.slug}`} type="button">
             Add to cart
-        </button>
+        </Link>
     </div>
 
     </div>

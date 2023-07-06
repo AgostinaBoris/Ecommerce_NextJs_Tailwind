@@ -58,7 +58,7 @@ export default function LoginScreen() {
           <label htmlFor="name">Name</label>
           <input
             type="text"
-            className="w-full"
+            className="w-full text-black"
             id="name"
             autoFocus
             {...register('name', {
@@ -81,7 +81,7 @@ export default function LoginScreen() {
                 message: 'Please enter valid email',
               },
             })}
-            className="w-full"
+            className="w-full text-black"
             id="email"
           ></input>
           {errors.email && (
@@ -96,7 +96,7 @@ export default function LoginScreen() {
               required: 'Please enter password',
               minLength: { value: 6, message: 'password is more than 5 chars' },
             })}
-            className="w-full"
+            className="w-full text-black"
             id="password"
             autoFocus
           ></input>
@@ -107,7 +107,7 @@ export default function LoginScreen() {
         <div className="mb-4">
           <label htmlFor="confirmPassword">Confirm Password</label>
           <input
-            className="w-full"
+            className="w-full text-black"
             type="password"
             id="confirmPassword"
             {...register('confirmPassword', {

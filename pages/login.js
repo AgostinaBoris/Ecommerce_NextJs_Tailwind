@@ -60,7 +60,7 @@ export default function LoginScreen() {
                 message: "Please enter valid email",
               },
             })}
-            className="w-full"
+            className="w-full text-black"
             id="email"
             autoFocus
           ></input>
@@ -77,7 +77,7 @@ export default function LoginScreen() {
               required: "Please enter password",
               minLength: { value: 6, message: "password is more than 5 chars" },
             })}
-            className="w-full"
+            className="w-full text-black"
             id="password"
             autoFocus
           ></input>
