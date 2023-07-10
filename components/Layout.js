@@ -66,8 +66,8 @@ export default function Layout({ title, children }) {
               {status === "loading" ? (
                 "Loading"
               ) : session?.user ? (
-                <Menu as="div" className="relative mt-4 px-4 inline-block">
-                  <Menu.Button className="text-red-600">
+                <Menu as="div" className="relative px-4 mt-4 inline-block">
+                  <Menu.Button className="text-red-600 mt-4">
                     {session.user.name}
                   </Menu.Button>
                   <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white shadow-lg">
@@ -97,7 +97,7 @@ export default function Layout({ title, children }) {
                   </Menu.Items>
                 </Menu>
               ) : (
-                <Link href="/login" className="p-4">
+                <Link href="/login" className="mt-4" >
                   Login
                 </Link>
               )}
@@ -109,7 +109,6 @@ export default function Layout({ title, children }) {
           </nav>
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
-        <footer>footer</footer>
       </div>
     </>
   );
